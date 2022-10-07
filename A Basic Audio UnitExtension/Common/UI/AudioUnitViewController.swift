@@ -76,7 +76,7 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
             }
         }
         
-        audioUnit.setupParameterTree(A_Basic_Audio_UnitExtensionParameterSpecs.createAUParameterTree())
+        audioUnit.setupParameterTree(parameterTree: A_Basic_Audio_UnitExtensionParameterSpecs.createAUParameterTree())
         
         self.observation = audioUnit.observe(\.allParameterValues, options: [.new]) { object, change in
             guard let tree = audioUnit.parameterTree else { return }

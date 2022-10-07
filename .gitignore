@@ -91,3 +91,5 @@ iOSInjectionProject/
 .DS_Store
 *.xcworkspacedata
 A Basic Audio Unit.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+*.xcscheme
+*.resolved
