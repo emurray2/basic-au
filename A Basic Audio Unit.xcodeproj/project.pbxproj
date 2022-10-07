@@ -84,7 +84,6 @@
 		602E000E28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitExtensionAudioUnit.swift; sourceTree = "<group>"; };
 		602E001428E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionParameterAddresses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A_Basic_Audio_UnitExtensionParameterAddresses.h; sourceTree = "<group>"; };
 		602E001528E0A8250020A1C6 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
-		602E001828E0A8250020A1C6 /* SinOscillator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinOscillator.h; sourceTree = "<group>"; };
 		602E001C28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitExtensionMainView.swift; sourceTree = "<group>"; };
 		602E001E28E0A8250020A1C6 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
 		602E002328E0A8250020A1C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainInterface.storyboard; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 				602E000428E0A8250020A1C6 /* Parameters */,
 				602E000728E0A8250020A1C6 /* Utility */,
 				602E000C28E0A8250020A1C6 /* Audio Unit */,
-				602E001028E0A8250020A1C6 /* DSP */,
 				602E002028E0A8250020A1C6 /* UI */,
 			);
 			path = Common;
@@ -187,13 +185,6 @@
 			path = "Audio Unit";
 			sourceTree = "<group>";
 		};
-		602E001028E0A8250020A1C6 /* DSP */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DSP;
-			sourceTree = "<group>";
-		};
 		602E001328E0A8250020A1C6 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,14 +192,6 @@
 				602E001528E0A8250020A1C6 /* Parameters.swift */,
 			);
 			path = Parameters;
-			sourceTree = "<group>";
-		};
-		602E001728E0A8250020A1C6 /* DSP */ = {
-			isa = PBXGroup;
-			children = (
-				602E001828E0A8250020A1C6 /* SinOscillator.h */,
-			);
-			path = DSP;
 			sourceTree = "<group>";
 		};
 		602E001B28E0A8250020A1C6 /* UI */ = {
@@ -368,7 +351,6 @@
 				602E002928E0A8250020A1C6 /* Info.plist */,
 				602E000228E0A8250020A1C6 /* Common */,
 				602E001328E0A8250020A1C6 /* Parameters */,
-				602E001728E0A8250020A1C6 /* DSP */,
 				602E001B28E0A8250020A1C6 /* UI */,
 			);
 			path = "A Basic Audio UnitExtension";
