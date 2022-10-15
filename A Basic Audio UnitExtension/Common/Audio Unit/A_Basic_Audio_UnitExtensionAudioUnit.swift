@@ -127,14 +127,34 @@ class A_Basic_Audio_UnitExtensionAudioUnit: AudioKitAUv3 {
         self.tsb = nil
         self.moeb = nil
     }
+    private func handleParameter(parameterEvent event: AUParameterEvent, timestamp: UnsafePointer<AudioTimeStamp>) {
+                // accurate to buffer size, when AKNodes support control signals w/ buffer offsets, use this code to get offset
+        //        let diff = Float64(parameterPointer.eventSampleTime) - timestamp.pointee.mSampleTime
+        //        let offset = MIDITimeStamp(UInt32(max(0, diff)))
+            parameterTree?.parameter(withAddress: event.parameterAddress)?.value = event.value
+        self.audioPlayer.mixerNode.volume = event.value
+    }
     public func setupParameterTree(parameterTree: AUParameterTree) {
         _parameterTree = parameterTree
+    }
+    private func handleEvents(eventsList: AURenderEvent?, timestamp: UnsafePointer<AudioTimeStamp>) {
+        var nextEvent = eventsList
+        while nextEvent != nil {
+            if nextEvent!.head.eventType == .MIDI {
+                //handleMIDI(midiEvent: nextEvent!.MIDI, timestamp: timestamp)
+            } else if (nextEvent!.head.eventType == .parameter ||  nextEvent!.head.eventType == .parameterRamp) {
+                handleParameter(parameterEvent: nextEvent!.parameter, timestamp: timestamp)
+                //print("Event:",nextEvent)
+            }
+            nextEvent = nextEvent!.head.next?.pointee
+        }
     }
     private func setInternalRenderingBlock() {
         self._internalRenderBlock = { [weak self] (actionflags, timestamp, frameCount, outputBusNumber, outputData, renderEvent, pullInputBlock) in
             guard let self = self else { return 1 }
+            self.audioPlayer.volume = self.parameterTree!.allParameters.first!.value
             if let eventList = renderEvent?.pointee {
-                // Handle render events here (i.e. MIDI)
+                self.handleEvents(eventsList: eventList, timestamp: timestamp)
             }
             
             // Render the audio
