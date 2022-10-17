@@ -138,19 +138,6 @@
 			path = Parameters;
 			sourceTree = "<group>";
 		};
-		602E002028E0A8250020A1C6 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				602E001E28E0A8250020A1C6 /* ParameterSlider.swift */,
-				602E001C28E0A8250020A1C6 /* MainView.swift */,
-				602E002528E0A8250020A1C6 /* ObservableAUParameter.swift */,
-				602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */,
-				602E002128E0A8250020A1C6 /* Base.lproj */,
-			);
-			name = UI;
-			path = Common/UI;
-			sourceTree = "<group>";
-		};
 		602E002128E0A8250020A1C6 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,11 +253,23 @@
 			children = (
 				602E002928E0A8250020A1C6 /* Info.plist */,
 				602E000228E0A8250020A1C6 /* Common */,
-				602E002028E0A8250020A1C6 /* UI */,
+				609F41C228FDD59100E1FB69 /* UI */,
 				602E000728E0A8250020A1C6 /* Utility */,
 				602E001328E0A8250020A1C6 /* Parameters */,
 			);
 			path = "Audio Unit";
+			sourceTree = "<group>";
+		};
+		609F41C228FDD59100E1FB69 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				602E001E28E0A8250020A1C6 /* ParameterSlider.swift */,
+				602E001C28E0A8250020A1C6 /* MainView.swift */,
+				602E002528E0A8250020A1C6 /* ObservableAUParameter.swift */,
+				602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */,
+				602E002128E0A8250020A1C6 /* Base.lproj */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
