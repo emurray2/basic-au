@@ -32,27 +32,10 @@
 		602EFFDA28E0A8230020A1C6 /* A_Basic_Audio_UnitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD928E0A8230020A1C6 /* A_Basic_Audio_UnitApp.swift */; };
 		602EFFDC28E0A8240020A1C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602EFFDB28E0A8240020A1C6 /* Assets.xcassets */; };
 		602EFFDF28E0A8240020A1C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602EFFDE28E0A8240020A1C6 /* Preview Assets.xcassets */; };
-		602EFFEA28E0A8240020A1C6 /* A_Basic_Audio_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFE928E0A8240020A1C6 /* A_Basic_Audio_UnitTests.swift */; };
-		602EFFF428E0A8240020A1C6 /* A_Basic_Audio_UnitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFF328E0A8240020A1C6 /* A_Basic_Audio_UnitUITests.swift */; };
-		602EFFF628E0A8240020A1C6 /* A_Basic_Audio_UnitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFF528E0A8240020A1C6 /* A_Basic_Audio_UnitUITestsLaunchTests.swift */; };
 		602EFFFC28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		602EFFE628E0A8240020A1C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 602EFFB628E0A8230020A1C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 602EFFBD28E0A8230020A1C6;
-			remoteInfo = "A Basic Audio Unit";
-		};
-		602EFFF028E0A8240020A1C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 602EFFB628E0A8230020A1C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 602EFFBD28E0A8230020A1C6;
-			remoteInfo = "A Basic Audio Unit";
-		};
 		602EFFFD28E0A8240020A1C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 602EFFB628E0A8230020A1C6 /* Project object */;
@@ -106,30 +89,11 @@
 		602EFFDB28E0A8240020A1C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		602EFFDE28E0A8240020A1C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		602EFFE028E0A8240020A1C6 /* A_Basic_Audio_Unit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = A_Basic_Audio_Unit.entitlements; sourceTree = "<group>"; };
-		602EFFE528E0A8240020A1C6 /* A Basic Audio UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "A Basic Audio UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		602EFFE928E0A8240020A1C6 /* A_Basic_Audio_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitTests.swift; sourceTree = "<group>"; };
-		602EFFEF28E0A8240020A1C6 /* A Basic Audio UnitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "A Basic Audio UnitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		602EFFF328E0A8240020A1C6 /* A_Basic_Audio_UnitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitUITests.swift; sourceTree = "<group>"; };
-		602EFFF528E0A8240020A1C6 /* A_Basic_Audio_UnitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "A Basic Audio UnitExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		602EFFBB28E0A8230020A1C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		602EFFE228E0A8240020A1C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		602EFFEC28E0A8240020A1C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,8 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				602EFFC028E0A8230020A1C6 /* A Basic Audio Unit */,
-				602EFFE828E0A8240020A1C6 /* A Basic Audio UnitTests */,
-				602EFFF228E0A8240020A1C6 /* A Basic Audio UnitUITests */,
 				602EFFFF28E0A8240020A1C6 /* A Basic Audio UnitExtension */,
 				602EFFBF28E0A8230020A1C6 /* Products */,
 				602E003C28E0BA1E0020A1C6 /* Frameworks */,
@@ -244,8 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				602EFFBE28E0A8230020A1C6 /* A Basic Audio Unit.app */,
-				602EFFE528E0A8240020A1C6 /* A Basic Audio UnitTests.xctest */,
-				602EFFEF28E0A8240020A1C6 /* A Basic Audio UnitUITests.xctest */,
 				602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */,
 			);
 			name = Products;
@@ -327,23 +287,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		602EFFE828E0A8240020A1C6 /* A Basic Audio UnitTests */ = {
-			isa = PBXGroup;
-			children = (
-				602EFFE928E0A8240020A1C6 /* A_Basic_Audio_UnitTests.swift */,
-			);
-			path = "A Basic Audio UnitTests";
-			sourceTree = "<group>";
-		};
-		602EFFF228E0A8240020A1C6 /* A Basic Audio UnitUITests */ = {
-			isa = PBXGroup;
-			children = (
-				602EFFF328E0A8240020A1C6 /* A_Basic_Audio_UnitUITests.swift */,
-				602EFFF528E0A8240020A1C6 /* A_Basic_Audio_UnitUITestsLaunchTests.swift */,
-			);
-			path = "A Basic Audio UnitUITests";
-			sourceTree = "<group>";
-		};
 		602EFFFF28E0A8240020A1C6 /* A Basic Audio UnitExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,42 +323,6 @@
 			productReference = 602EFFBE28E0A8230020A1C6 /* A Basic Audio Unit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		602EFFE428E0A8240020A1C6 /* A Basic Audio UnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 602E003328E0A8250020A1C6 /* Build configuration list for PBXNativeTarget "A Basic Audio UnitTests" */;
-			buildPhases = (
-				602EFFE128E0A8240020A1C6 /* Sources */,
-				602EFFE228E0A8240020A1C6 /* Frameworks */,
-				602EFFE328E0A8240020A1C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				602EFFE728E0A8240020A1C6 /* PBXTargetDependency */,
-			);
-			name = "A Basic Audio UnitTests";
-			productName = "A Basic Audio UnitTests";
-			productReference = 602EFFE528E0A8240020A1C6 /* A Basic Audio UnitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		602EFFEE28E0A8240020A1C6 /* A Basic Audio UnitUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 602E003628E0A8250020A1C6 /* Build configuration list for PBXNativeTarget "A Basic Audio UnitUITests" */;
-			buildPhases = (
-				602EFFEB28E0A8240020A1C6 /* Sources */,
-				602EFFEC28E0A8240020A1C6 /* Frameworks */,
-				602EFFED28E0A8240020A1C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				602EFFF128E0A8240020A1C6 /* PBXTargetDependency */,
-			);
-			name = "A Basic Audio UnitUITests";
-			productName = "A Basic Audio UnitUITests";
-			productReference = 602EFFEF28E0A8240020A1C6 /* A Basic Audio UnitUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		602EFFFA28E0A8240020A1C6 /* A Basic Audio UnitExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 602E002C28E0A8250020A1C6 /* Build configuration list for PBXNativeTarget "A Basic Audio UnitExtension" */;
@@ -449,14 +356,6 @@
 					602EFFBD28E0A8230020A1C6 = {
 						CreatedOnToolsVersion = 14.1;
 					};
-					602EFFE428E0A8240020A1C6 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 602EFFBD28E0A8230020A1C6;
-					};
-					602EFFEE28E0A8240020A1C6 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 602EFFBD28E0A8230020A1C6;
-					};
 					602EFFFA28E0A8240020A1C6 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -479,8 +378,6 @@
 			projectRoot = "";
 			targets = (
 				602EFFBD28E0A8230020A1C6 /* A Basic Audio Unit */,
-				602EFFE428E0A8240020A1C6 /* A Basic Audio UnitTests */,
-				602EFFEE28E0A8240020A1C6 /* A Basic Audio UnitUITests */,
 				602EFFFA28E0A8240020A1C6 /* A Basic Audio UnitExtension */,
 			);
 		};
@@ -494,20 +391,6 @@
 				602EFFDC28E0A8240020A1C6 /* Assets.xcassets in Resources */,
 				602EFFDF28E0A8240020A1C6 /* Preview Assets.xcassets in Resources */,
 				602EFFC928E0A8230020A1C6 /* Synth.aif in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		602EFFE328E0A8240020A1C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		602EFFED28E0A8240020A1C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,23 +423,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		602EFFE128E0A8240020A1C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				602EFFEA28E0A8240020A1C6 /* A_Basic_Audio_UnitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		602EFFEB28E0A8240020A1C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				602EFFF628E0A8240020A1C6 /* A_Basic_Audio_UnitUITestsLaunchTests.swift in Sources */,
-				602EFFF428E0A8240020A1C6 /* A_Basic_Audio_UnitUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		602EFFF728E0A8240020A1C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -576,16 +442,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		602EFFE728E0A8240020A1C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 602EFFBD28E0A8230020A1C6 /* A Basic Audio Unit */;
-			targetProxy = 602EFFE628E0A8240020A1C6 /* PBXContainerItemProxy */;
-		};
-		602EFFF128E0A8240020A1C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 602EFFBD28E0A8230020A1C6 /* A Basic Audio Unit */;
-			targetProxy = 602EFFF028E0A8240020A1C6 /* PBXContainerItemProxy */;
-		};
 		602EFFFE28E0A8240020A1C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 602EFFFA28E0A8240020A1C6 /* A Basic Audio UnitExtension */;
@@ -851,82 +707,6 @@
 			};
 			name = Release;
 		};
-		602E003428E0A8250020A1C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6CV59M265C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.auraaudio.A-Basic-Audio-UnitTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A Basic Audio Unit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/A Basic Audio Unit";
-			};
-			name = Debug;
-		};
-		602E003528E0A8250020A1C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6CV59M265C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.auraaudio.A-Basic-Audio-UnitTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A Basic Audio Unit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/A Basic Audio Unit";
-			};
-			name = Release;
-		};
-		602E003728E0A8250020A1C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6CV59M265C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.auraaudio.A-Basic-Audio-UnitUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "A Basic Audio Unit";
-			};
-			name = Debug;
-		};
-		602E003828E0A8250020A1C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6CV59M265C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.auraaudio.A-Basic-Audio-UnitUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "A Basic Audio Unit";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -944,24 +724,6 @@
 			buildConfigurations = (
 				602E003128E0A8250020A1C6 /* Debug */,
 				602E003228E0A8250020A1C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		602E003328E0A8250020A1C6 /* Build configuration list for PBXNativeTarget "A Basic Audio UnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				602E003428E0A8250020A1C6 /* Debug */,
-				602E003528E0A8250020A1C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		602E003628E0A8250020A1C6 /* Build configuration list for PBXNativeTarget "A Basic Audio UnitUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				602E003728E0A8250020A1C6 /* Debug */,
-				602E003828E0A8250020A1C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
