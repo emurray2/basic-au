@@ -1,2 +1,2 @@
 # basic-au
-A Basic Audio Unit Template
+A basic Audio Unit built with AudioKit
