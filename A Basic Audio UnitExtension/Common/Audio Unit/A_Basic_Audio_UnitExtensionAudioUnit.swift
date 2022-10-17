@@ -1,10 +1,3 @@
-//
-//  A_Basic_Audio_UnitExtensionAudioUnit.swift
-//  A Basic Audio UnitExtension
-//
-//  Created by Aura Audio on 9/25/22.
-//
-
 import AudioKit
 import AVFoundation
 import CoreAudioKit

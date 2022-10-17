@@ -1,10 +1,3 @@
-//
-//  CrossPlatform.swift
-//  A Basic Audio UnitExtension
-//
-//  Created by Aura Audio on 9/25/22.
-//
-
 import Foundation
 import SwiftUI
 

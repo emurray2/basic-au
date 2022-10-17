@@ -1,10 +1,3 @@
-//
-//  ViewControllerRepresentable.swift
-//  A Basic Audio Unit
-//
-//  Created by Aura Audio on 9/25/22.
-//
-
 import SwiftUI
 
 #if os(iOS)
