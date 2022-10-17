@@ -10,9 +10,9 @@
 		602E000628E0A8250020A1C6 /* ParameterSpecBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */; };
 		602E000928E0A8250020A1C6 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000828E0A8250020A1C6 /* CrossPlatform.swift */; };
 		602E000B28E0A8250020A1C6 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000A28E0A8250020A1C6 /* String+Utils.swift */; };
-		602E000F28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000E28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionAudioUnit.swift */; };
+		602E000F28E0A8250020A1C6 /* BasicAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */; };
 		602E001628E0A8250020A1C6 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E001528E0A8250020A1C6 /* Parameters.swift */; };
-		602E001D28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E001C28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionMainView.swift */; };
+		602E001D28E0A8250020A1C6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E001C28E0A8250020A1C6 /* MainView.swift */; };
 		602E001F28E0A8250020A1C6 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E001E28E0A8250020A1C6 /* ParameterSlider.swift */; };
 		602E002428E0A8250020A1C6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602E002228E0A8250020A1C6 /* MainInterface.storyboard */; };
 		602E002628E0A8250020A1C6 /* ObservableAUParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E002528E0A8250020A1C6 /* ObservableAUParameter.swift */; };
@@ -28,7 +28,7 @@
 		602EFFD328E0A8230020A1C6 /* MIDIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD228E0A8230020A1C6 /* MIDIManager.swift */; };
 		602EFFD628E0A8230020A1C6 /* AudioUnitHostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD528E0A8230020A1C6 /* AudioUnitHostModel.swift */; };
 		602EFFD828E0A8230020A1C6 /* AudioUnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD728E0A8230020A1C6 /* AudioUnitViewModel.swift */; };
-		602EFFDA28E0A8230020A1C6 /* A_Basic_Audio_UnitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD928E0A8230020A1C6 /* A_Basic_Audio_UnitApp.swift */; };
+		602EFFDA28E0A8230020A1C6 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD928E0A8230020A1C6 /* MainApp.swift */; };
 		602EFFDC28E0A8240020A1C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602EFFDB28E0A8240020A1C6 /* Assets.xcassets */; };
 		602EFFDF28E0A8240020A1C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602EFFDE28E0A8240020A1C6 /* Preview Assets.xcassets */; };
 		602EFFFC28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -62,17 +62,17 @@
 		602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSpecBase.swift; sourceTree = "<group>"; };
 		602E000828E0A8250020A1C6 /* CrossPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
 		602E000A28E0A8250020A1C6 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
-		602E000E28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitExtensionAudioUnit.swift; sourceTree = "<group>"; };
-		602E001428E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionParameterAddresses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A_Basic_Audio_UnitExtensionParameterAddresses.h; sourceTree = "<group>"; };
+		602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAudioUnit.swift; sourceTree = "<group>"; };
+		602E001428E0A8250020A1C6 /* ParameterAddresses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParameterAddresses.h; sourceTree = "<group>"; };
 		602E001528E0A8250020A1C6 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
-		602E001C28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitExtensionMainView.swift; sourceTree = "<group>"; };
+		602E001C28E0A8250020A1C6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		602E001E28E0A8250020A1C6 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
 		602E002328E0A8250020A1C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		602E002528E0A8250020A1C6 /* ObservableAUParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableAUParameter.swift; sourceTree = "<group>"; };
 		602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
 		602E002928E0A8250020A1C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602E004728E106240020A1C6 /* FunStuff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FunStuff.wav; sourceTree = "<group>"; };
-		602E004928E10E670020A1C6 /* A_Basic_Audio_UnitExtension-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "A_Basic_Audio_UnitExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		602E004928E10E670020A1C6 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		602EFFBE28E0A8230020A1C6 /* A Basic Audio Unit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Basic Audio Unit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		602EFFC128E0A8230020A1C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		602EFFC528E0A8230020A1C6 /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
@@ -83,10 +83,10 @@
 		602EFFD228E0A8230020A1C6 /* MIDIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIManager.swift; sourceTree = "<group>"; };
 		602EFFD528E0A8230020A1C6 /* AudioUnitHostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitHostModel.swift; sourceTree = "<group>"; };
 		602EFFD728E0A8230020A1C6 /* AudioUnitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewModel.swift; sourceTree = "<group>"; };
-		602EFFD928E0A8230020A1C6 /* A_Basic_Audio_UnitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Basic_Audio_UnitApp.swift; sourceTree = "<group>"; };
+		602EFFD928E0A8230020A1C6 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		602EFFDB28E0A8240020A1C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		602EFFDE28E0A8240020A1C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		602EFFE028E0A8240020A1C6 /* A_Basic_Audio_Unit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = A_Basic_Audio_Unit.entitlements; sourceTree = "<group>"; };
+		602EFFE028E0A8240020A1C6 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "A Basic Audio UnitExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,22 +112,11 @@
 		602E000228E0A8250020A1C6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				602E004928E10E670020A1C6 /* A_Basic_Audio_UnitExtension-Bridging-Header.h */,
+				602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */,
+				602E004928E10E670020A1C6 /* BridgingHeader.h */,
 				602E004728E106240020A1C6 /* FunStuff.wav */,
-				602E000428E0A8250020A1C6 /* Parameters */,
-				602E000728E0A8250020A1C6 /* Utility */,
-				602E000C28E0A8250020A1C6 /* Audio Unit */,
-				602E002028E0A8250020A1C6 /* UI */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		602E000428E0A8250020A1C6 /* Parameters */ = {
-			isa = PBXGroup;
-			children = (
-				602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */,
-			);
-			path = Parameters;
 			sourceTree = "<group>";
 		};
 		602E000728E0A8250020A1C6 /* Utility */ = {
@@ -139,40 +128,27 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		602E000C28E0A8250020A1C6 /* Audio Unit */ = {
-			isa = PBXGroup;
-			children = (
-				602E000E28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionAudioUnit.swift */,
-			);
-			path = "Audio Unit";
-			sourceTree = "<group>";
-		};
 		602E001328E0A8250020A1C6 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
-				602E001428E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionParameterAddresses.h */,
+				602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */,
+				602E001428E0A8250020A1C6 /* ParameterAddresses.h */,
 				602E001528E0A8250020A1C6 /* Parameters.swift */,
 			);
 			path = Parameters;
 			sourceTree = "<group>";
 		};
-		602E001B28E0A8250020A1C6 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				602E001C28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionMainView.swift */,
-				602E001E28E0A8250020A1C6 /* ParameterSlider.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		602E002028E0A8250020A1C6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				602E001E28E0A8250020A1C6 /* ParameterSlider.swift */,
+				602E001C28E0A8250020A1C6 /* MainView.swift */,
 				602E002528E0A8250020A1C6 /* ObservableAUParameter.swift */,
 				602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */,
 				602E002128E0A8250020A1C6 /* Base.lproj */,
 			);
-			path = UI;
+			name = UI;
+			path = Common/UI;
 			sourceTree = "<group>";
 		};
 		602E002128E0A8250020A1C6 /* Base.lproj */ = {
@@ -193,8 +169,8 @@
 		602EFFB528E0A8230020A1C6 = {
 			isa = PBXGroup;
 			children = (
-				602EFFC028E0A8230020A1C6 /* A Basic Audio Unit */,
-				602EFFFF28E0A8240020A1C6 /* A Basic Audio UnitExtension */,
+				602EFFC028E0A8230020A1C6 /* App */,
+				602EFFFF28E0A8240020A1C6 /* Audio Unit */,
 				602EFFBF28E0A8230020A1C6 /* Products */,
 				602E003C28E0BA1E0020A1C6 /* Frameworks */,
 			);
@@ -209,28 +185,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		602EFFC028E0A8230020A1C6 /* A Basic Audio Unit */ = {
+		602EFFC028E0A8230020A1C6 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				602EFFC128E0A8230020A1C6 /* ContentView.swift */,
-				602EFFD928E0A8230020A1C6 /* A_Basic_Audio_UnitApp.swift */,
+				602EFFE028E0A8240020A1C6 /* Entitlements.entitlements */,
 				602EFFDB28E0A8240020A1C6 /* Assets.xcassets */,
-				602EFFE028E0A8240020A1C6 /* A_Basic_Audio_Unit.entitlements */,
 				602EFFC328E0A8230020A1C6 /* Common */,
+				602EFFC428E0A8230020A1C6 /* UI */,
 				602EFFD428E0A8230020A1C6 /* Model */,
+				602EFFD128E0A8230020A1C6 /* MIDI */,
+				602EFFCE28E0A8230020A1C6 /* String */,
+				602EFFC728E0A8230020A1C6 /* Audio */,
 				602EFFDD28E0A8240020A1C6 /* Preview Content */,
 			);
-			path = "A Basic Audio Unit";
+			path = App;
 			sourceTree = "<group>";
 		};
 		602EFFC328E0A8230020A1C6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				602EFFC128E0A8230020A1C6 /* ContentView.swift */,
+				602EFFD928E0A8230020A1C6 /* MainApp.swift */,
 				602EFFCC28E0A8230020A1C6 /* TypeAliases.swift */,
-				602EFFC428E0A8230020A1C6 /* UI */,
-				602EFFC728E0A8230020A1C6 /* Audio */,
-				602EFFCE28E0A8230020A1C6 /* String */,
-				602EFFD128E0A8230020A1C6 /* MIDI */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -285,15 +261,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		602EFFFF28E0A8240020A1C6 /* A Basic Audio UnitExtension */ = {
+		602EFFFF28E0A8240020A1C6 /* Audio Unit */ = {
 			isa = PBXGroup;
 			children = (
 				602E002928E0A8250020A1C6 /* Info.plist */,
 				602E000228E0A8250020A1C6 /* Common */,
+				602E002028E0A8250020A1C6 /* UI */,
+				602E000728E0A8250020A1C6 /* Utility */,
 				602E001328E0A8250020A1C6 /* Parameters */,
-				602E001B28E0A8250020A1C6 /* UI */,
 			);
-			path = "A Basic Audio UnitExtension";
+			path = "Audio Unit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,7 +389,7 @@
 				602EFFD028E0A8230020A1C6 /* StringHelpers.swift in Sources */,
 				602EFFCD28E0A8230020A1C6 /* TypeAliases.swift in Sources */,
 				602EFFD328E0A8230020A1C6 /* MIDIManager.swift in Sources */,
-				602EFFDA28E0A8230020A1C6 /* A_Basic_Audio_UnitApp.swift in Sources */,
+				602EFFDA28E0A8230020A1C6 /* MainApp.swift in Sources */,
 				602EFFC228E0A8230020A1C6 /* ContentView.swift in Sources */,
 				602EFFC628E0A8230020A1C6 /* ViewControllerRepresentable.swift in Sources */,
 				602EFFCB28E0A8230020A1C6 /* SimplePlayEngine.swift in Sources */,
@@ -424,10 +401,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				602E001628E0A8250020A1C6 /* Parameters.swift in Sources */,
-				602E000F28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionAudioUnit.swift in Sources */,
+				602E000F28E0A8250020A1C6 /* BasicAudioUnit.swift in Sources */,
 				602E002628E0A8250020A1C6 /* ObservableAUParameter.swift in Sources */,
 				602E000628E0A8250020A1C6 /* ParameterSpecBase.swift in Sources */,
-				602E001D28E0A8250020A1C6 /* A_Basic_Audio_UnitExtensionMainView.swift in Sources */,
+				602E001D28E0A8250020A1C6 /* MainView.swift in Sources */,
 				602E002828E0A8250020A1C6 /* AudioUnitViewController.swift in Sources */,
 				602E001F28E0A8250020A1C6 /* ParameterSlider.swift in Sources */,
 				602E000928E0A8250020A1C6 /* CrossPlatform.swift in Sources */,
@@ -578,13 +555,14 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "A Basic Audio UnitExtension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "A Basic Audio UnitExtension";
+				INFOPLIST_FILE = "Audio Unit/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "A Basic Audio Unit";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -598,7 +576,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "A Basic Audio UnitExtension/Common/A_Basic_Audio_UnitExtension-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Audio Unit/Common/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -609,13 +587,14 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "A Basic Audio UnitExtension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "A Basic Audio UnitExtension";
+				INFOPLIST_FILE = "Audio Unit/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "A Basic Audio Unit";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,7 +608,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "A Basic Audio UnitExtension/Common/A_Basic_Audio_UnitExtension-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Audio Unit/Common/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -641,9 +620,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"A Basic Audio Unit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -675,9 +655,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"A Basic Audio Unit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = 6CV59M265C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

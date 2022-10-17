@@ -8,7 +8,7 @@ private let log = Logger(subsystem: "io.auraaudio.A-Basic-Audio-UnitExtension", 
 public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
     var audioUnit: AUAudioUnit?
     
-    var hostingController: HostingController<A_Basic_Audio_UnitExtensionMainView>?
+    var hostingController: HostingController<MainView>?
     
     private var observation: NSKeyValueObservation?
 
@@ -54,10 +54,10 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
     }
     
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
-        audioUnit = try A_Basic_Audio_UnitExtensionAudioUnit(componentDescription: componentDescription, options: [])
+        audioUnit = try BasicAudioUnit(componentDescription: componentDescription, options: [])
         
-        guard let audioUnit = self.audioUnit as? A_Basic_Audio_UnitExtensionAudioUnit else {
-            log.error("Unable to create A_Basic_Audio_UnitExtensionAudioUnit")
+        guard let audioUnit = self.audioUnit as? BasicAudioUnit else {
+            log.error("Unable to create BasicAudioUnit")
             return audioUnit!
         }
         
@@ -69,7 +69,7 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
             }
         }
         
-        audioUnit.setupParameterTree(parameterTree: A_Basic_Audio_UnitExtensionParameterSpecs.createAUParameterTree())
+        audioUnit.setupParameterTree(parameterTree: ParameterManager.createAUParameterTree())
         
         self.observation = audioUnit.observe(\.allParameterValues, options: [.new]) { object, change in
             guard let tree = audioUnit.parameterTree else { return }
@@ -95,7 +95,7 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
         guard let observableParameterTree = audioUnit.observableParameterTree else {
             return
         }
-        let content = A_Basic_Audio_UnitExtensionMainView(parameterTree: observableParameterTree)
+        let content = MainView(parameterTree: observableParameterTree)
         let host = HostingController(rootView: content)
         self.addChild(host)
         host.view.frame = self.view.bounds

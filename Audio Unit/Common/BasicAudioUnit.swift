@@ -69,7 +69,7 @@ open class AudioKitAUv3: AUAudioUnit {
 
 }
 
-class A_Basic_Audio_UnitExtensionAudioUnit: AudioKitAUv3 {
+class BasicAudioUnit: AudioKitAUv3 {
     var engine: AudioEngine!
     var audioPlayer: AudioPlayer!
     public override init(componentDescription: AudioComponentDescription,

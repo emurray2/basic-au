@@ -2,7 +2,7 @@ import CoreMIDI
 import SwiftUI
 
 @main
-class A_Basic_Audio_UnitApp: App {
+class MainApp: App {
     @ObservedObject private var hostModel = AudioUnitHostModel()
 
     required init() {}

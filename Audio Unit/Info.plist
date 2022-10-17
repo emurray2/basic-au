@@ -10,13 +10,13 @@
 			<array>
 				<dict>
 					<key>description</key>
-					<string>A_Basic_Audio_UnitExtension</string>
+					<string>A basic Audio Unit built with AudioKit</string>
 					<key>factoryFunction</key>
 					<string>$(PRODUCT_MODULE_NAME).AudioUnitViewController</string>
 					<key>manufacturer</key>
 					<string>Hwco</string>
 					<key>name</key>
-					<string>Hello World Company: A_Basic_Audio_UnitExtension</string>
+					<string>Hello World Company: A Basic Audio Unit</string>
 					<key>sandboxSafe</key>
 					<true/>
 					<key>subtype</key>

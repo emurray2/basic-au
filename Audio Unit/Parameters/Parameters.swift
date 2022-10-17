@@ -1,7 +1,7 @@
 import Foundation
 import AudioToolbox
 
-let A_Basic_Audio_UnitExtensionParameterSpecs = ParameterTreeSpec {
+let ParameterManager = ParameterTreeSpec {
     ParameterGroupSpec(identifier: "global", name: "Global") {
         ParameterSpec(
             address: .gain,
