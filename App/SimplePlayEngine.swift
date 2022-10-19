@@ -73,12 +73,7 @@ public class SimplePlayEngine {
     
     public init() {
         engine.attach(player)
-        
-        guard let fileURL = Bundle.main.url(forResource: "Synth", withExtension: "aif") else {
-            fatalError("\"Synth.aif\" file not found.")
-        }
-        setPlayerFile(fileURL)
-        
+        engine.connect(player, to: engine.mainMixerNode, format: nil)
         engine.prepare()
         setupMIDI()
     }
@@ -120,17 +115,7 @@ public class SimplePlayEngine {
             }
         }
     }
-    
-    private func setPlayerFile(_ fileURL: URL) {
-        do {
-            let file = try AVAudioFile(forReading: fileURL)
-            self.file = file
-            engine.connect(player, to: engine.mainMixerNode, format: file.processingFormat)
-        } catch {
-            fatalError("Could not create AVAudioFile instance. error: \(error).")
-        }
-    }
-    
+
     private func setSessionActive(_ active: Bool) {
 #if os(iOS)
         do {
