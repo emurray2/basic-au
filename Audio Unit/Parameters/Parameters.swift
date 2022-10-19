@@ -1,6 +1,10 @@
 import Foundation
 import AudioToolbox
 
+enum ParameterAddress: AUParameterAddress {
+    case gain
+}
+
 let ParameterManager = ParameterTreeSpec {
     ParameterGroupSpec(identifier: "global", name: "Global") {
         ParameterSpec(
@@ -16,7 +20,7 @@ let ParameterManager = ParameterTreeSpec {
 
 extension ParameterSpec {
     init(
-        address: A_Basic_Audio_UnitExtensionParameterAddress,
+        address: ParameterAddress,
         identifier: String,
         name: String,
         units: AudioUnitParameterUnit,

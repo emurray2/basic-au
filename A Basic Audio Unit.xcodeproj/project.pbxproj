@@ -62,7 +62,6 @@
 		602E000828E0A8250020A1C6 /* CrossPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
 		602E000A28E0A8250020A1C6 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAudioUnit.swift; sourceTree = "<group>"; };
-		602E001428E0A8250020A1C6 /* ParameterAddresses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParameterAddresses.h; sourceTree = "<group>"; };
 		602E001528E0A8250020A1C6 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		602E001C28E0A8250020A1C6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		602E001E28E0A8250020A1C6 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
@@ -71,7 +70,6 @@
 		602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
 		602E002928E0A8250020A1C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602E004728E106240020A1C6 /* FunStuff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FunStuff.wav; sourceTree = "<group>"; };
-		602E004928E10E670020A1C6 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		602EFFBE28E0A8230020A1C6 /* A Basic Audio Unit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Basic Audio Unit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		602EFFC128E0A8230020A1C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		602EFFC528E0A8230020A1C6 /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */,
-				602E004928E10E670020A1C6 /* BridgingHeader.h */,
 				602E004728E106240020A1C6 /* FunStuff.wav */,
 			);
 			path = Common;
@@ -130,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */,
-				602E001428E0A8250020A1C6 /* ParameterAddresses.h */,
 				602E001528E0A8250020A1C6 /* Parameters.swift */,
 			);
 			path = Parameters;
@@ -563,7 +559,9 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Audio Unit/Common/BridgingHeader.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -595,7 +593,9 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Audio Unit/Common/BridgingHeader.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -631,6 +631,8 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -666,6 +668,8 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
