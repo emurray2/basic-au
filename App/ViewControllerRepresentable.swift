@@ -1,6 +1,11 @@
 import SwiftUI
 
 #if os(iOS)
+import UIKit
+public typealias KitColor = UIColor
+public typealias KitView = UIView
+public typealias ViewController = UIViewController
+
 class WrapperVC: ViewController {
     override func loadView() {
         view = KitView()
