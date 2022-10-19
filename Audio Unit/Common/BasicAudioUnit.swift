@@ -80,11 +80,6 @@ class BasicAudioUnit: AudioKitAUv3 {
         audioPlayer.isLooping = true
         engine.output = Reverb(audioPlayer)
         do {
-            try engine.avEngine.enableManualRenderingMode(.offline,
-                                                          format: Settings.audioFormat,
-                                                          maximumFrameCount: 4096)
-            try engine.start()
-            audioPlayer.play()
             try super.init(componentDescription: componentDescription, options: options)
             try setOutputBusArrays()
         } catch let err {
