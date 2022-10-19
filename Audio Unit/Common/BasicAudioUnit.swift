@@ -74,11 +74,6 @@ class BasicAudioUnit: AudioKitAUv3 {
     var audioPlayer: AudioPlayer!
     public override init(componentDescription: AudioComponentDescription,
                   options: AudioComponentInstantiationOptions = []) throws {
-        Settings.disableAVAudioSessionCategoryManagement = true
-        engine = AudioEngine()
-        audioPlayer = AudioPlayer(url: Bundle.main.url(forResource: "FunStuff", withExtension: "wav")!, buffered: true)
-        audioPlayer.isLooping = true
-        engine.output = Reverb(audioPlayer)
         do {
             try super.init(componentDescription: componentDescription, options: options)
             try setOutputBusArrays()
@@ -90,6 +85,10 @@ class BasicAudioUnit: AudioKitAUv3 {
         log(componentDescription)
     }
     override public func allocateRenderResources() throws {
+        engine = AudioEngine()
+        audioPlayer = AudioPlayer(url: Bundle.main.url(forResource: "FunStuff", withExtension: "wav")!, buffered: true)
+        audioPlayer.isLooping = true
+        engine.output = Reverb(audioPlayer)
         do {
             try engine.avEngine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
             Settings.disableAVAudioSessionCategoryManagement = true
