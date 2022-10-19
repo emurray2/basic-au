@@ -177,7 +177,6 @@
 				602EFFDB28E0A8240020A1C6 /* Assets.xcassets */,
 				602EFFC328E0A8230020A1C6 /* Common */,
 				602EFFC428E0A8230020A1C6 /* UI */,
-				602EFFD428E0A8230020A1C6 /* Model */,
 				602EFFD128E0A8230020A1C6 /* MIDI */,
 				602EFFCE28E0A8230020A1C6 /* String */,
 				602EFFC728E0A8230020A1C6 /* Audio */,
@@ -189,6 +188,7 @@
 		602EFFC328E0A8230020A1C6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				602EFFD528E0A8230020A1C6 /* ViewModels.swift */,
 				602EFFC128E0A8230020A1C6 /* ContentView.swift */,
 				602EFFD928E0A8230020A1C6 /* MainApp.swift */,
 				602EFFCC28E0A8230020A1C6 /* TypeAliases.swift */,
@@ -227,14 +227,6 @@
 				602EFFD228E0A8230020A1C6 /* MIDIManager.swift */,
 			);
 			path = MIDI;
-			sourceTree = "<group>";
-		};
-		602EFFD428E0A8230020A1C6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				602EFFD528E0A8230020A1C6 /* ViewModels.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		602EFFDD28E0A8240020A1C6 /* Preview Content */ = {
