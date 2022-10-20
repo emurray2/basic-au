@@ -8,7 +8,7 @@ private let log = Logger(subsystem: "io.auraaudio.A-Basic-Audio-UnitExtension", 
 public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
     var audioUnit: AUAudioUnit?
     
-    var hostingController: HostingController<MainView>?
+    var hostingController: UIHostingController<MainView>?
     
     private var observation: NSKeyValueObservation?
 
@@ -96,7 +96,7 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
             return
         }
         let content = MainView(parameterTree: observableParameterTree)
-        let host = HostingController(rootView: content)
+        let host = UIHostingController(rootView: content)
         self.addChild(host)
         host.view.frame = self.view.bounds
         self.view.addSubview(host.view)

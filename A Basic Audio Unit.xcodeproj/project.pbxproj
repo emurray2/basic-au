@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		602E000628E0A8250020A1C6 /* ParameterSpecBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */; };
-		602E000928E0A8250020A1C6 /* CrossPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000828E0A8250020A1C6 /* CrossPlatform.swift */; };
 		602E000B28E0A8250020A1C6 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000A28E0A8250020A1C6 /* String+Utils.swift */; };
 		602E000F28E0A8250020A1C6 /* BasicAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */; };
 		602E001628E0A8250020A1C6 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E001528E0A8250020A1C6 /* Parameters.swift */; };
@@ -55,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSpecBase.swift; sourceTree = "<group>"; };
-		602E000828E0A8250020A1C6 /* CrossPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossPlatform.swift; sourceTree = "<group>"; };
 		602E000A28E0A8250020A1C6 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAudioUnit.swift; sourceTree = "<group>"; };
 		602E001528E0A8250020A1C6 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				602E000E28E0A8250020A1C6 /* BasicAudioUnit.swift */,
 				602E001528E0A8250020A1C6 /* Parameters.swift */,
 				602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */,
-				602E000828E0A8250020A1C6 /* CrossPlatform.swift */,
 				602E000A28E0A8250020A1C6 /* String+Utils.swift */,
 			);
 			path = "Audio Unit";
@@ -294,7 +291,6 @@
 				602E001D28E0A8250020A1C6 /* MainView.swift in Sources */,
 				602E002828E0A8250020A1C6 /* AudioUnitViewController.swift in Sources */,
 				602E001F28E0A8250020A1C6 /* ParameterSlider.swift in Sources */,
-				602E000928E0A8250020A1C6 /* CrossPlatform.swift in Sources */,
 				602E000B28E0A8250020A1C6 /* String+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

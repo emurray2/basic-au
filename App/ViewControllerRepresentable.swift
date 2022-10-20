@@ -1,16 +1,5 @@
 import SwiftUI
-
-#if os(iOS)
 import UIKit
-public typealias KitColor = UIColor
-public typealias KitView = UIView
-public typealias ViewController = UIViewController
-
-class WrapperVC: ViewController {
-    override func loadView() {
-        view = KitView()
-    }
-}
 
 struct AUViewControllerUI: UIViewControllerRepresentable {
 	var auViewController: UIViewController?
@@ -20,7 +9,7 @@ struct AUViewControllerUI: UIViewControllerRepresentable {
 	}
 	
 	func makeUIViewController(context: Context) -> UIViewController {
-		let viewController = WrapperVC()
+		let viewController = UIViewController()
 		guard let auViewController = self.auViewController else {
 			return viewController
 		}
@@ -38,21 +27,3 @@ struct AUViewControllerUI: UIViewControllerRepresentable {
         // No opp
     }
 }
-#elseif os(macOS)
-struct AUViewControllerUI: NSViewControllerRepresentable {
-	
-	var auViewController: NSViewController?
-
-	init(viewController: NSViewController?) {
-		self.auViewController = viewController
-	}
-	
-	func makeNSViewController(context: Context) -> NSViewController {
-		return self.auViewController!
-	}
-	
-	func updateNSViewController(_ nsViewController: NSViewController, context: Context) {
-        // No opp
-	}
-}
-#endif

@@ -1,12 +1,7 @@
 import Foundation
 import CoreAudioKit
 import AVFoundation
-
-#if os(iOS)
 import UIKit
-#elseif os(macOS)
-import AppKit
-#endif
 
 /// Wraps and Audio Unit extension and provides helper functions.
 extension AVAudioUnit {
@@ -26,7 +21,7 @@ extension AVAudioUnit {
         return AVAudioUnitComponentManager.shared().components(matching: description).first
     }
     
-    fileprivate func loadAudioUnitViewController(completion: @escaping (ViewController?) -> Void) {
+    fileprivate func loadAudioUnitViewController(completion: @escaping (UIViewController?) -> Void) {
         auAudioUnit.requestViewController { [weak self] viewController in
             DispatchQueue.main.async {
                 if #available(macOS 13.0, iOS 16.0, *) {
@@ -88,7 +83,7 @@ public class SimplePlayEngine {
         }
     }
     
-    func initComponent(type: String, subType: String, manufacturer: String, completion: @escaping (Result<Bool, Error>, ViewController?) -> Void) {
+    func initComponent(type: String, subType: String, manufacturer: String, completion: @escaping (Result<Bool, Error>, UIViewController?) -> Void) {
         // Reset the engine to remove any configured audio units.
         reset()
         

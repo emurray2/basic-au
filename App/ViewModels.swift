@@ -6,7 +6,7 @@ struct AudioUnitViewModel {
     var showMIDIContols: Bool = false
     var title: String = "-"
     var message: String = "No Audio Unit loaded.."
-    var viewController: ViewController?
+    var viewController: UIViewController?
 }
 
 class AudioUnitHostModel: ObservableObject {
