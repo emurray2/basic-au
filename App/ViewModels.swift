@@ -1,9 +1,7 @@
 import SwiftUI
 import AudioToolbox
 
-struct AudioUnitViewModel {
-    var viewController: UIViewController?
-}
+struct AudioUnitViewModel { var viewController: UIViewController? }
 
 class AudioUnitHostModel: ObservableObject {
     /// The playback engine used to play audio.
