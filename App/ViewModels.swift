@@ -25,7 +25,6 @@ class AudioUnitHostModel: ObservableObject {
     let subType: String
     let manufacturer: String
 
-    let wantsAudio: Bool
     let wantsMIDI: Bool
     let isFreeRunning: Bool
 
@@ -35,8 +34,6 @@ class AudioUnitHostModel: ObservableObject {
         self.type = type
         self.subType = subType
         self.manufacturer = manufacturer
-        let wantsAudio = type.fourCharCode == kAudioUnitType_MusicEffect || type.fourCharCode == kAudioUnitType_Effect
-        self.wantsAudio = wantsAudio
 
         let wantsMIDI = type.fourCharCode == kAudioUnitType_MIDIProcessor ||
         type.fourCharCode == kAudioUnitType_MusicDevice ||
@@ -59,8 +56,7 @@ class AudioUnitHostModel: ObservableObject {
                                  manufacturer: manufacturer) { [self] result, viewController in
             switch result {
             case .success(_):
-                self.viewModel = AudioUnitViewModel(showAudioControls: self.wantsAudio,
-                                                    showMIDIContols: self.wantsMIDI,
+                self.viewModel = AudioUnitViewModel(showMIDIContols: self.wantsMIDI,
                                                     title: self.auValString,
                                                     message: "Successfully loaded (\(self.auValString))",
                                                     viewController: viewController)

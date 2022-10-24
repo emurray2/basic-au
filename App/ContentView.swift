@@ -26,16 +26,6 @@ struct ContentView: View {
                 }
             }
             .padding(doubleMargin)
-            
-            if hostModel.viewModel.showAudioControls {
-                Text("Audio Playback")
-                Button {
-                    hostModel.isPlaying ? hostModel.stopPlaying() : hostModel.startPlaying()
-                    
-                } label: {
-                    Text(hostModel.isPlaying ? "Stop" : "Play")
-                }
-            }
             if hostModel.viewModel.showMIDIContols {
                 Text("MIDI Input: Enabled")
             }
