@@ -3,7 +3,6 @@ import AudioToolbox
 
 struct AudioUnitViewModel {
     var title: String = "-"
-    var message: String = "No Audio Unit loaded.."
     var viewController: UIViewController?
 }
 
@@ -42,13 +41,11 @@ class AudioUnitHostModel: ObservableObject {
             switch result {
             case .success(_):
                 self.viewModel = AudioUnitViewModel(title: self.auValString,
-                                                    message: "Successfully loaded (\(self.auValString))",
                                                     viewController: viewController)
                 self.playEngine.startPlaying()
 
-            case .failure(let error):
+            case .failure(_):
                 self.viewModel = AudioUnitViewModel(title: self.auValString,
-                                                    message: "Failed to load Audio Unit with error: \(error.localizedDescription)",
                                                     viewController: nil)
             }
         }

@@ -17,12 +17,6 @@ struct ContentView: View {
                 if let viewController = hostModel.viewModel.viewController {
                     AUViewControllerUI(viewController: viewController)
                         .padding(margin)
-                } else {
-                    VStack() {
-                        Text(hostModel.viewModel.message)
-                            .padding()
-                    }
-                    .frame(minWidth: 400, minHeight: 200)
                 }
             }
             .padding(doubleMargin)
