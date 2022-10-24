@@ -4,10 +4,8 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var hostModel: AudioUnitHostModel
     var margin = 10.0
-    var doubleMargin: Double {
-        margin * 2.0
-    }
-    
+    var doubleMargin: Double { margin * 2.0 }
+
     var body: some View {
         VStack() {
             VStack(alignment: .center) {
