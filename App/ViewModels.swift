@@ -2,8 +2,6 @@ import SwiftUI
 import AudioToolbox
 
 struct AudioUnitViewModel {
-    var showAudioControls: Bool = false
-    var showMIDIContols: Bool = false
     var title: String = "-"
     var message: String = "No Audio Unit loaded.."
     var viewController: UIViewController?
@@ -25,7 +23,6 @@ class AudioUnitHostModel: ObservableObject {
     let subType: String
     let manufacturer: String
 
-    let wantsMIDI: Bool
     let isFreeRunning: Bool
 
     let auValString: String
@@ -34,11 +31,6 @@ class AudioUnitHostModel: ObservableObject {
         self.type = type
         self.subType = subType
         self.manufacturer = manufacturer
-
-        let wantsMIDI = type.fourCharCode == kAudioUnitType_MIDIProcessor ||
-        type.fourCharCode == kAudioUnitType_MusicDevice ||
-        type.fourCharCode == kAudioUnitType_MusicEffect
-        self.wantsMIDI = wantsMIDI
 
         let isFreeRunning = type.fourCharCode == kAudioUnitType_MIDIProcessor ||
         type.fourCharCode == kAudioUnitType_MusicDevice ||
@@ -56,8 +48,7 @@ class AudioUnitHostModel: ObservableObject {
                                  manufacturer: manufacturer) { [self] result, viewController in
             switch result {
             case .success(_):
-                self.viewModel = AudioUnitViewModel(showMIDIContols: self.wantsMIDI,
-                                                    title: self.auValString,
+                self.viewModel = AudioUnitViewModel(title: self.auValString,
                                                     message: "Successfully loaded (\(self.auValString))",
                                                     viewController: viewController)
 
@@ -65,9 +56,7 @@ class AudioUnitHostModel: ObservableObject {
                     self.playEngine.startPlaying()
                 }
             case .failure(let error):
-                self.viewModel = AudioUnitViewModel(showAudioControls: false,
-                                                    showMIDIContols: false,
-                                                    title: self.auValString,
+                self.viewModel = AudioUnitViewModel(title: self.auValString,
                                                     message: "Failed to load Audio Unit with error: \(error.localizedDescription)",
                                                     viewController: nil)
             }

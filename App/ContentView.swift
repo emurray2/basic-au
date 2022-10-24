@@ -26,9 +26,6 @@ struct ContentView: View {
                 }
             }
             .padding(doubleMargin)
-            if hostModel.viewModel.showMIDIContols {
-                Text("MIDI Input: Enabled")
-            }
             Spacer()
                 .frame(height: margin)
         }
