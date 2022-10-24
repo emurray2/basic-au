@@ -23,19 +23,12 @@ class AudioUnitHostModel: ObservableObject {
     let subType: String
     let manufacturer: String
 
-    let isFreeRunning: Bool
-
     let auValString: String
 
     init(type: String = "aumu", subType: String = "abau", manufacturer: String = "Hwco") {
         self.type = type
         self.subType = subType
         self.manufacturer = manufacturer
-
-        let isFreeRunning = type.fourCharCode == kAudioUnitType_MIDIProcessor ||
-        type.fourCharCode == kAudioUnitType_MusicDevice ||
-        type.fourCharCode == kAudioUnitType_Generator
-        self.isFreeRunning = isFreeRunning
 
         auValString = "\(type) \(subType) \(manufacturer)"
 
@@ -51,23 +44,13 @@ class AudioUnitHostModel: ObservableObject {
                 self.viewModel = AudioUnitViewModel(title: self.auValString,
                                                     message: "Successfully loaded (\(self.auValString))",
                                                     viewController: viewController)
+                self.playEngine.startPlaying()
 
-                if self.isFreeRunning {
-                    self.playEngine.startPlaying()
-                }
             case .failure(let error):
                 self.viewModel = AudioUnitViewModel(title: self.auValString,
                                                     message: "Failed to load Audio Unit with error: \(error.localizedDescription)",
                                                     viewController: nil)
             }
         }
-    }
-
-    func startPlaying() {
-        playEngine.startPlaying()
-    }
-
-    func stopPlaying() {
-        playEngine.stopPlaying()
     }
 }
