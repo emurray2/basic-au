@@ -10,9 +10,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack() {
-            Text("\(hostModel.viewModel.title )")
-                .textSelection(.enabled)
-                .padding()
             VStack(alignment: .center) {
                 if let viewController = hostModel.viewModel.viewController {
                     AUViewControllerUI(viewController: viewController)

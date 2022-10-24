@@ -2,7 +2,6 @@ import SwiftUI
 import AudioToolbox
 
 struct AudioUnitViewModel {
-    var title: String = "-"
     var viewController: UIViewController?
 }
 
@@ -17,36 +16,21 @@ class AudioUnitHostModel: ObservableObject {
         playEngine.isPlaying
     }
 
-    /// Audio Component Description
-    let type: String
-    let subType: String
-    let manufacturer: String
-
-    let auValString: String
-
-    init(type: String = "aumu", subType: String = "abau", manufacturer: String = "Hwco") {
-        self.type = type
-        self.subType = subType
-        self.manufacturer = manufacturer
-
-        auValString = "\(type) \(subType) \(manufacturer)"
-
+    init() {
         loadAudioUnit()
     }
 
     private func loadAudioUnit() {
-        playEngine.initComponent(type: type,
-                                 subType: subType,
-                                 manufacturer: manufacturer) { [self] result, viewController in
+        playEngine.initComponent(type: "aumu",
+                                 subType: "abau",
+                                 manufacturer: "Hwco") { [self] result, viewController in
             switch result {
             case .success(_):
-                self.viewModel = AudioUnitViewModel(title: self.auValString,
-                                                    viewController: viewController)
+                self.viewModel = AudioUnitViewModel(viewController: viewController)
                 self.playEngine.startPlaying()
 
             case .failure(_):
-                self.viewModel = AudioUnitViewModel(title: self.auValString,
-                                                    viewController: nil)
+                self.viewModel = AudioUnitViewModel(viewController: nil)
             }
         }
     }
