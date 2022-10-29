@@ -10,8 +10,6 @@ class AudioUnitHostModel: ObservableObject {
     /// The model providing information about the current Audio Unit
     @Published private(set) var viewModel = AudioUnitViewModel()
 
-    var isPlaying: Bool { playEngine.isPlaying }
-
     init() { loadAudioUnit() }
 
     private func loadAudioUnit() {
