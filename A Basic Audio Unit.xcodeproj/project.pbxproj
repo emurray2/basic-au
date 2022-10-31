@@ -20,7 +20,7 @@
 		602E004828E106240020A1C6 /* FunStuff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 602E004728E106240020A1C6 /* FunStuff.wav */; };
 		602EFFC228E0A8230020A1C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFC128E0A8230020A1C6 /* ContentView.swift */; };
 		602EFFC628E0A8230020A1C6 /* ViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFC528E0A8230020A1C6 /* ViewControllerRepresentable.swift */; };
-		602EFFCB28E0A8230020A1C6 /* SimplePlayEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFCA28E0A8230020A1C6 /* SimplePlayEngine.swift */; };
+		602EFFCB28E0A8230020A1C6 /* AppAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFCA28E0A8230020A1C6 /* AppAudio.swift */; };
 		602EFFD028E0A8230020A1C6 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFCF28E0A8230020A1C6 /* StringHelpers.swift */; };
 		602EFFD328E0A8230020A1C6 /* MIDIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD228E0A8230020A1C6 /* MIDIManager.swift */; };
 		602EFFD628E0A8230020A1C6 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD528E0A8230020A1C6 /* ViewModels.swift */; };
@@ -67,7 +67,7 @@
 		602EFFBE28E0A8230020A1C6 /* A Basic Audio Unit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Basic Audio Unit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		602EFFC128E0A8230020A1C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		602EFFC528E0A8230020A1C6 /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
-		602EFFCA28E0A8230020A1C6 /* SimplePlayEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePlayEngine.swift; sourceTree = "<group>"; };
+		602EFFCA28E0A8230020A1C6 /* AppAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAudio.swift; sourceTree = "<group>"; };
 		602EFFCF28E0A8230020A1C6 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		602EFFD228E0A8230020A1C6 /* MIDIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIManager.swift; sourceTree = "<group>"; };
 		602EFFD528E0A8230020A1C6 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				602EFFD928E0A8230020A1C6 /* MainApp.swift */,
 				602EFFC128E0A8230020A1C6 /* ContentView.swift */,
 				602EFFD528E0A8230020A1C6 /* ViewModels.swift */,
-				602EFFCA28E0A8230020A1C6 /* SimplePlayEngine.swift */,
+				602EFFCA28E0A8230020A1C6 /* AppAudio.swift */,
 				602EFFC528E0A8230020A1C6 /* ViewControllerRepresentable.swift */,
 				602EFFD228E0A8230020A1C6 /* MIDIManager.swift */,
 				602EFFCF28E0A8230020A1C6 /* StringHelpers.swift */,
@@ -276,7 +276,7 @@
 				602EFFDA28E0A8230020A1C6 /* MainApp.swift in Sources */,
 				602EFFC228E0A8230020A1C6 /* ContentView.swift in Sources */,
 				602EFFC628E0A8230020A1C6 /* ViewControllerRepresentable.swift in Sources */,
-				602EFFCB28E0A8230020A1C6 /* SimplePlayEngine.swift in Sources */,
+				602EFFCB28E0A8230020A1C6 /* AppAudio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

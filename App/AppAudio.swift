@@ -30,7 +30,7 @@ extension AVAudioUnit {
     }
 }
 
-public class SimplePlayEngine {
+public class AppAudio {
     private var avAudioUnit: AVAudioUnit?
     private let engine = AVAudioEngine()
     private let mixer = AVAudioMixerNode()
@@ -95,11 +95,7 @@ public class SimplePlayEngine {
         }
     }
 
-    public func startPlaying() {
-        self.startPlayingInternal()
-    }
-
-    private func startPlayingInternal() {
+    public func start() {
         setSessionActive(true)
 
         let hardwareFormat = engine.outputNode.outputFormat(forBus: 0)
@@ -112,7 +108,7 @@ public class SimplePlayEngine {
         }
     }
 
-    private func stopPlayingInternal() {
+    public func stop() {
         engine.stop()
         setSessionActive(false)
     }
