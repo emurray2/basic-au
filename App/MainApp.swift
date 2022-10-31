@@ -1,4 +1,3 @@
-import CoreMIDI
 import SwiftUI
 
 @main

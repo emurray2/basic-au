@@ -1,13 +1,10 @@
 import SwiftUI
-import AudioToolbox
 
 struct AudioUnitViewModel { var viewController: UIViewController? }
 
 class AudioUnitHostModel: ObservableObject {
-    /// The playback engine used to play audio.
     private let playEngine = SimplePlayEngine()
 
-    /// The model providing information about the current Audio Unit
     @Published private(set) var viewModel = AudioUnitViewModel()
 
     init() { loadAudioUnit() }
