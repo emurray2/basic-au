@@ -5,7 +5,7 @@ import SwiftUI
 /// This view wraps a SwiftUI Slider, and provides it relevant data from the Parameter, like the minimum and maximum values.
 struct ParameterSlider: View {
     @ObservedObject var param: ObservableAUParameter
-    
+
     var specifier: String {
         switch param.unit {
         case .midiNoteNumber:
@@ -14,7 +14,7 @@ struct ParameterSlider: View {
             return "%.2f"
         }
     }
-    
+
     var body: some View {
         VStack {
             Slider(
