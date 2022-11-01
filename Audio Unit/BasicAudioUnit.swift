@@ -94,6 +94,7 @@ class BasicAudioUnit: AudioKitAUv3 {
             try engine.start()
             osc.start()
             try super.allocateRenderResources()
+            setInitialValues()
         } catch {
             return
         }
@@ -106,6 +107,7 @@ class BasicAudioUnit: AudioKitAUv3 {
 
     public func setupParameterTree(parameterTree: AUParameterTree) {
         _parameterTree = parameterTree
+        createParamSetters()
     }
 
     private func handleEvents(eventsList: AURenderEvent?, timestamp: UnsafePointer<AudioTimeStamp>) {
@@ -121,7 +123,6 @@ class BasicAudioUnit: AudioKitAUv3 {
     private func setInternalRenderingBlock() {
         self._internalRenderBlock = { [weak self] (actionflags, timestamp, frameCount, outputBusNumber, outputData, renderEvent, pullInputBlock) in
             guard let self = self else { return 1 }
-            self.engine.mainMixerNode!.volume = self.parameterTree!.allParameters.first!.value
             if let eventList = renderEvent?.pointee {
                 self.handleEvents(eventsList: eventList, timestamp: timestamp)
             }
@@ -130,5 +131,22 @@ class BasicAudioUnit: AudioKitAUv3 {
             _ = self.engine.avEngine.manualRenderingBlock(frameCount, outputData, nil)
             return noErr
         }
+    }
+    
+    private func createParamSetters() {
+        guard let paramTree = self.parameterTree else { return }
+        paramTree.implementorValueObserver = { param, floatValue in
+            let parameterAddress = ParameterAddress(rawValue: param.address)
+            switch(parameterAddress) {
+            case .gain:
+                self.engine.mainMixerNode!.volume = floatValue
+            default:
+                break;
+            }
+        }
+    }
+    
+    private func setInitialValues() {
+        self.engine.mainMixerNode!.volume = 0.25
     }
 }

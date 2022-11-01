@@ -208,7 +208,6 @@ final class ObservableAUParameter: ObservableAUParameterNode, ObservableObject {
 
 extension AUAudioUnit {
     // Can we subclass the Parameter tree to set that on the AUAudioUnit?
-
     var observableParameterTree: ObservableAUParameterGroup? {
         guard let paramTree = self.parameterTree else { return nil }
         return ObservableAUParameterGroup(paramTree)
