@@ -139,7 +139,8 @@ class BasicAudioUnit: AudioKitAUv3 {
             let parameterAddress = ParameterAddress(rawValue: param.address)
             switch(parameterAddress) {
             case .gain:
-                self.engine.mainMixerNode!.volume = floatValue
+                guard let mainMixer = self.engine.mainMixerNode else { return }
+                mainMixer.volume = floatValue
             default:
                 break;
             }
@@ -147,6 +148,7 @@ class BasicAudioUnit: AudioKitAUv3 {
     }
     
     private func setInitialValues() {
-        self.engine.mainMixerNode!.volume = 0.25
+        guard let mainMixer = self.engine.mainMixerNode else { return }
+        mainMixer.volume = 0.25
     }
 }
