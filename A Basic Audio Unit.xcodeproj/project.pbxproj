@@ -16,7 +16,6 @@
 		602E002628E0A8250020A1C6 /* ObservableAUParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E002528E0A8250020A1C6 /* ObservableAUParameter.swift */; };
 		602E002828E0A8250020A1C6 /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */; };
 		602E004628E0FFA70020A1C6 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 602E004528E0FFA70020A1C6 /* AudioKit */; };
-		602E004828E106240020A1C6 /* FunStuff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 602E004728E106240020A1C6 /* FunStuff.wav */; };
 		602EFFC228E0A8230020A1C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFC128E0A8230020A1C6 /* ContentView.swift */; };
 		602EFFC628E0A8230020A1C6 /* ViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFC528E0A8230020A1C6 /* ViewControllerRepresentable.swift */; };
 		602EFFCB28E0A8230020A1C6 /* AppAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFCA28E0A8230020A1C6 /* AppAudio.swift */; };
@@ -61,7 +60,6 @@
 		602E002528E0A8250020A1C6 /* ObservableAUParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableAUParameter.swift; sourceTree = "<group>"; };
 		602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
 		602E002928E0A8250020A1C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		602E004728E106240020A1C6 /* FunStuff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FunStuff.wav; sourceTree = "<group>"; };
 		602EFFBE28E0A8230020A1C6 /* A Basic Audio Unit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Basic Audio Unit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		602EFFC128E0A8230020A1C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		602EFFC528E0A8230020A1C6 /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				602E002928E0A8250020A1C6 /* Info.plist */,
-				602E004728E106240020A1C6 /* FunStuff.wav */,
 				602E002728E0A8250020A1C6 /* AudioUnitViewController.swift */,
 				602E001C28E0A8250020A1C6 /* MainView.swift */,
 				602E001E28E0A8250020A1C6 /* ParameterSlider.swift */,
@@ -247,7 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				602E004828E106240020A1C6 /* FunStuff.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

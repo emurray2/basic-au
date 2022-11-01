@@ -65,7 +65,7 @@ open class AudioKitAUv3: AUAudioUnit {
 
 class BasicAudioUnit: AudioKitAUv3 {
     var engine: AudioEngine!
-    var audioPlayer: AudioPlayer!
+    var osc: PlaygroundOscillator!
 
     public override init(componentDescription: AudioComponentDescription,
                   options: AudioComponentInstantiationOptions = []) throws {
@@ -81,9 +81,8 @@ class BasicAudioUnit: AudioKitAUv3 {
 
     override public func allocateRenderResources() throws {
         engine = AudioEngine()
-        audioPlayer = AudioPlayer(url: Bundle.main.url(forResource: "FunStuff", withExtension: "wav")!, buffered: true)
-        audioPlayer.isLooping = true
-        engine.output = Reverb(audioPlayer)
+        osc = PlaygroundOscillator()
+        engine.output = osc
         do {
             try engine.avEngine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
             Settings.disableAVAudioSessionCategoryManagement = true
@@ -93,7 +92,7 @@ class BasicAudioUnit: AudioKitAUv3 {
             }
             Settings.sampleRate = outputBus.format.sampleRate
             try engine.start()
-            audioPlayer.play()
+            osc.start()
             try super.allocateRenderResources()
         } catch {
             return
@@ -122,7 +121,7 @@ class BasicAudioUnit: AudioKitAUv3 {
     private func setInternalRenderingBlock() {
         self._internalRenderBlock = { [weak self] (actionflags, timestamp, frameCount, outputBusNumber, outputData, renderEvent, pullInputBlock) in
             guard let self = self else { return 1 }
-            self.audioPlayer.volume = self.parameterTree!.allParameters.first!.value
+            self.engine.mainMixerNode!.volume = self.parameterTree!.allParameters.first!.value
             if let eventList = renderEvent?.pointee {
                 self.handleEvents(eventsList: eventList, timestamp: timestamp)
             }
