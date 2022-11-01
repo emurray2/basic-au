@@ -65,7 +65,7 @@ open class AudioKitAUv3: AUAudioUnit {
 
 class BasicAudioUnit: AudioKitAUv3 {
     var engine: AudioEngine!
-    var osc: PlaygroundOscillator!
+    var osc: AppleSampler!
 
     public override init(componentDescription: AudioComponentDescription,
                   options: AudioComponentInstantiationOptions = []) throws {
@@ -81,7 +81,7 @@ class BasicAudioUnit: AudioKitAUv3 {
 
     override public func allocateRenderResources() throws {
         engine = AudioEngine()
-        osc = PlaygroundOscillator()
+        osc = AppleSampler()
         engine.output = osc
         do {
             try engine.avEngine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
@@ -109,19 +109,55 @@ class BasicAudioUnit: AudioKitAUv3 {
         _parameterTree = parameterTree
         createParamSetters()
     }
+    
+    private func handleMIDI(midiEvent event: AUMIDIEvent) {
+        let midiEvent = MIDIEvent(data: [event.data.0, event.data.1, event.data.2])
+        guard let statusType = midiEvent.status?.type else { return }
+        if statusType == .noteOn {
+            if midiEvent.data[2] == 0 {
+                receivedMIDINoteOff(noteNumber: event.data.1,
+                                    channel: midiEvent.channel ?? 0)
+            } else {
+                receivedMIDINoteOn(noteNumber: event.data.1,
+                                   velocity: event.data.2,
+                                   channel: midiEvent.channel ?? 0)
+            }
+        } else if statusType == .noteOff {
+            receivedMIDINoteOff(noteNumber: event.data.1,
+                                channel: midiEvent.channel ?? 0)
+        }
+    }
+
+    func receivedMIDINoteOn(noteNumber: MIDINoteNumber,
+                            velocity: MIDIVelocity,
+                            channel: MIDIChannel) {
+        osc.play(noteNumber: noteNumber, velocity: velocity, channel: channel)
+    }
+    
+    private func receivedMIDINoteOff(noteNumber: MIDINoteNumber,
+                                     channel: MIDIChannel) {
+        osc.stop(noteNumber: noteNumber,
+                 channel: channel)
+    }
 
     private func handleEvents(eventsList: AURenderEvent?, timestamp: UnsafePointer<AudioTimeStamp>) {
         var nextEvent = eventsList
         while nextEvent != nil {
             if nextEvent!.head.eventType == .MIDI {
-                //handleMIDI(midiEvent: nextEvent!.MIDI, timestamp: timestamp)
+                handleMIDI(midiEvent: nextEvent!.MIDI)
             }
             nextEvent = nextEvent!.head.next?.pointee
         }
     }
 
     private func setInternalRenderingBlock() {
-        self._internalRenderBlock = { [weak self] (actionflags, timestamp, frameCount, outputBusNumber, outputData, renderEvent, pullInputBlock) in
+        self._internalRenderBlock = { [weak self] (actionflags,
+                                                   timestamp,
+                                                   frameCount,
+                                                   outputBusNumber,
+                                                   outputData,
+                                                   renderEvent,
+                                                   pullInputBlock) in
             guard let self = self else { return 1 }
             if let eventList = renderEvent?.pointee {
                 self.handleEvents(eventsList: eventList, timestamp: timestamp)
