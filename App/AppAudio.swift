@@ -1,6 +1,7 @@
 import Foundation
 import CoreAudioKit
 import AVFoundation
+import MIDIKit
 import UIKit
 
 extension AVAudioUnit {
@@ -34,6 +35,7 @@ public class AppAudio {
     private var avAudioUnit: AVAudioUnit?
     private let engine = AVAudioEngine()
     private let mixer = AVAudioMixerNode()
+    private let midi = MIDIManager(clientName: "MIDIManager_Client", model: "A Basic Audio Unit", manufacturer: "Hello World Company")
 
     // This block will be called every render cycle and will receive MIDI events
     private let midiOutBlock: AUMIDIOutputEventBlock = { sampleTime, cable, length, data in return noErr }
@@ -49,13 +51,13 @@ public class AppAudio {
     }
 
     private func setupMIDI() {
-        if !MIDIManager.shared.setupPort(midiProtocol: MIDIProtocolID._2_0, receiveBlock: { [weak self] eventList, _ in
-            if let scheduleMIDIEventListBlock = self?.scheduleMIDIEventListBlock {
-                _ = scheduleMIDIEventListBlock(AUEventSampleTimeImmediate, 0, eventList)
-            }
-        }) {
-            fatalError("Failed to setup Core MIDI")
-        }
+//        if !MIDIManager.shared.setupPort(midiProtocol: MIDIProtocolID._2_0, receiveBlock: { [weak self] eventList, _ in
+//            if let scheduleMIDIEventListBlock = self?.scheduleMIDIEventListBlock {
+//                _ = scheduleMIDIEventListBlock(AUEventSampleTimeImmediate, 0, eventList)
+//            }
+//        }) {
+//            fatalError("Failed to setup Core MIDI")
+//        }
     }
 
     func initComponent(type: String, subType: String, manufacturer: String, completion: @escaping (Result<Bool, Error>, UIViewController?) -> Void) {
