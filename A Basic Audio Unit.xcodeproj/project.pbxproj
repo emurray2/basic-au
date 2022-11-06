@@ -24,7 +24,6 @@
 		602EFFD628E0A8230020A1C6 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD528E0A8230020A1C6 /* ViewModels.swift */; };
 		602EFFDA28E0A8230020A1C6 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602EFFD928E0A8230020A1C6 /* MainApp.swift */; };
 		602EFFFC28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		6071BB59291766C2004641F3 /* MIDIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6071BB58291766C2004641F3 /* MIDIKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6071BB59291766C2004641F3 /* MIDIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +167,6 @@
 			);
 			name = "A Basic Audio Unit";
 			packageProductDependencies = (
-				6071BB58291766C2004641F3 /* MIDIKit */,
 			);
 			productName = "A Basic Audio Unit";
 			productReference = 602EFFBE28E0A8230020A1C6 /* A Basic Audio Unit.app */;
@@ -224,7 +221,6 @@
 			mainGroup = 602EFFB528E0A8230020A1C6;
 			packageReferences = (
 				602E004228E0FF890020A1C6 /* XCRemoteSwiftPackageReference "AudioKit" */,
-				6071BB57291766C2004641F3 /* XCRemoteSwiftPackageReference "MIDIKit" */,
 			);
 			productRefGroup = 602EFFBF28E0A8230020A1C6 /* Products */;
 			projectDirPath = "";
@@ -593,14 +589,6 @@
 				kind = branch;
 			};
 		};
-		6071BB57291766C2004641F3 /* XCRemoteSwiftPackageReference "MIDIKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/orchetect/MIDIKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -608,11 +596,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 602E004228E0FF890020A1C6 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
-		};
-		6071BB58291766C2004641F3 /* MIDIKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6071BB57291766C2004641F3 /* XCRemoteSwiftPackageReference "MIDIKit" */;
-			productName = MIDIKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
