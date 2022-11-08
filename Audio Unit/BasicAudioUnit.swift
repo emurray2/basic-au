@@ -95,6 +95,7 @@ class BasicAudioUnit: AudioKitAUv3 {
             osc.start()
             try super.allocateRenderResources()
             setInitialValues()
+            createParamSetters()
         } catch {
             return
         }
@@ -107,7 +108,6 @@ class BasicAudioUnit: AudioKitAUv3 {
 
     public func setupParameterTree(parameterTree: AUParameterTree) {
         _parameterTree = parameterTree
-        createParamSetters()
     }
     
     private func handleMIDI(midiEvent event: AUMIDIEvent) {
