@@ -115,6 +115,10 @@ class BasicAudioUnit: AudioKitAUv3 {
         case .noteOff:
             osc.stop(noteNumber: midiEvent.noteNumber ?? 0,
                      channel: midiEvent.channel ?? 0)
+        case .controllerChange:
+            osc.midiCC(midiEvent.data[1],
+                       value: midiEvent.data[2],
+                       channel: midiEvent.channel ?? 0)
         default:
             break;
         }
