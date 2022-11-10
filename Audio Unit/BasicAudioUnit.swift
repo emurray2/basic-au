@@ -65,7 +65,7 @@ open class AudioKitAUv3: AUAudioUnit {
 
 class BasicAudioUnit: AudioKitAUv3 {
     var engine: AudioEngine!
-    var osc: AppleSampler!
+    var osc: MIDISampler!
 
     public override init(componentDescription: AudioComponentDescription,
                   options: AudioComponentInstantiationOptions = []) throws {
@@ -81,7 +81,7 @@ class BasicAudioUnit: AudioKitAUv3 {
 
     override public func allocateRenderResources() throws {
         engine = AudioEngine()
-        osc = AppleSampler()
+        osc = MIDISampler()
         engine.output = osc
         do {
             try engine.avEngine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
