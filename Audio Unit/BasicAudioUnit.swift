@@ -28,7 +28,7 @@ open class AudioKitAUv3: AUAudioUnit {
     }
 
     open func setOutputBusArrays() throws {
-        outputBus = try AUAudioUnitBus(format: Settings.audioFormat)
+        outputBus = try AUAudioUnitBus(format: AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)!)
         self._outputBusArray = AUAudioUnitBusArray(audioUnit: self, busType: AUAudioUnitBusType.output, busses: [outputBus])
     }
 
@@ -85,12 +85,6 @@ class BasicAudioUnit: AudioKitAUv3 {
         engine.output = osc
         do {
             try engine.avEngine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
-            Settings.disableAVAudioSessionCategoryManagement = true
-            let sessionSize = Settings.session.sampleRate * Settings.session.ioBufferDuration
-            if let length = Settings.BufferLength.init(rawValue: Int(sessionSize.rounded())) {
-                Settings.bufferLength = length
-            }
-            Settings.sampleRate = outputBus.format.sampleRate
             try engine.start()
             osc.start()
             try super.allocateRenderResources()
