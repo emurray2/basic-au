@@ -103,38 +103,21 @@ class BasicAudioUnit: AudioKitAUv3 {
     public func setupParameterTree(parameterTree: AUParameterTree) {
         _parameterTree = parameterTree
     }
-    
+
     private func handleMIDI(midiEvent event: AUMIDIEvent) {
         let midiEvent = MIDIEvent(data: [event.data.0, event.data.1, event.data.2])
         guard let statusType = midiEvent.status?.type else { return }
         switch(statusType) {
         case .noteOn:
-            if midiEvent.data[2] == 0 {
-                receivedMIDINoteOff(noteNumber: event.data.1,
-                                    channel: midiEvent.channel ?? 0)
-            } else {
-                receivedMIDINoteOn(noteNumber: event.data.1,
-                                   velocity: event.data.2,
-                                   channel: midiEvent.channel ?? 0)
-            }
+            try! osc.receivedMIDINoteOn(noteNumber: midiEvent.noteNumber ?? 0,
+                                        velocity: midiEvent.data[1],
+                                        channel: midiEvent.channel ?? 0)
         case .noteOff:
-            receivedMIDINoteOff(noteNumber: event.data.1,
-                                channel: midiEvent.channel ?? 0)
+            osc.stop(noteNumber: midiEvent.noteNumber ?? 0,
+                     channel: midiEvent.channel ?? 0)
         default:
             break;
         }
-    }
-
-    func receivedMIDINoteOn(noteNumber: MIDINoteNumber,
-                            velocity: MIDIVelocity,
-                            channel: MIDIChannel) {
-        osc.play(noteNumber: noteNumber, velocity: velocity, channel: channel)
-    }
-    
-    private func receivedMIDINoteOff(noteNumber: MIDINoteNumber,
-                                     channel: MIDIChannel) {
-        osc.stop(noteNumber: noteNumber,
-                 channel: channel)
     }
 
     private func handleEvents(eventsList: AURenderEvent?, timestamp: UnsafePointer<AudioTimeStamp>) {
