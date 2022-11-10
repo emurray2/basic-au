@@ -107,7 +107,8 @@ class BasicAudioUnit: AudioKitAUv3 {
     private func handleMIDI(midiEvent event: AUMIDIEvent) {
         let midiEvent = MIDIEvent(data: [event.data.0, event.data.1, event.data.2])
         guard let statusType = midiEvent.status?.type else { return }
-        if statusType == .noteOn {
+        switch(statusType) {
+        case .noteOn:
             if midiEvent.data[2] == 0 {
                 receivedMIDINoteOff(noteNumber: event.data.1,
                                     channel: midiEvent.channel ?? 0)
@@ -116,9 +117,11 @@ class BasicAudioUnit: AudioKitAUv3 {
                                    velocity: event.data.2,
                                    channel: midiEvent.channel ?? 0)
             }
-        } else if statusType == .noteOff {
+        case .noteOff:
             receivedMIDINoteOff(noteNumber: event.data.1,
                                 channel: midiEvent.channel ?? 0)
+        default:
+            break;
         }
     }
 
