@@ -84,7 +84,7 @@ class BasicAudioUnit: AudioKitAUv3 {
         osc = MIDISampler()
         engine.output = osc
         do {
-            try engine.avEngine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
+            try engine.avEngine.enableManualRenderingMode(.realtime, format: outputBus.format, maximumFrameCount: 4096)
             try engine.start()
             osc.start()
             try super.allocateRenderResources()
