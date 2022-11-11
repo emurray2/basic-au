@@ -119,6 +119,9 @@ class BasicAudioUnit: AudioKitAUv3 {
             osc.midiCC(midiEvent.data[1],
                        value: midiEvent.data[2],
                        channel: midiEvent.channel ?? 0)
+        case .pitchWheel:
+            osc.setPitchbend(amount: midiEvent.pitchbendAmount ?? 0,
+                             channel: midiEvent.channel ?? 0)
         default:
             break;
         }
@@ -152,7 +155,7 @@ class BasicAudioUnit: AudioKitAUv3 {
             return noErr
         }
     }
-    
+
     private func createParamSetters() {
         guard let paramTree = self.parameterTree else { return }
         paramTree.implementorValueObserver = { param, floatValue in
@@ -166,7 +169,7 @@ class BasicAudioUnit: AudioKitAUv3 {
             }
         }
     }
-    
+
     private func setInitialValues() {
         guard let mainMixer = self.engine.mainMixerNode else { return }
         mainMixer.volume = 0.25
