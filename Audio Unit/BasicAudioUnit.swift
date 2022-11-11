@@ -88,8 +88,7 @@ class BasicAudioUnit: AudioKitAUv3 {
             try engine.start()
             osc.start()
             try super.allocateRenderResources()
-            setInitialValues()
-            createParamSetters()
+            initializeParameters()
         } catch {
             return
         }
@@ -102,6 +101,10 @@ class BasicAudioUnit: AudioKitAUv3 {
 
     public func setupParameterTree(parameterTree: AUParameterTree) {
         _parameterTree = parameterTree
+    }
+
+    private func handleParameter(parameterEvent event: AUParameterEvent, timestamp: UnsafePointer<AudioTimeStamp>) {
+        parameterTree?.parameter(withAddress: event.parameterAddress)?.value = event.value
     }
 
     private func handleMIDI(midiEvent event: AUMIDIEvent) {
@@ -132,6 +135,8 @@ class BasicAudioUnit: AudioKitAUv3 {
         while nextEvent != nil {
             if nextEvent!.head.eventType == .MIDI {
                 handleMIDI(midiEvent: nextEvent!.MIDI)
+            } else if nextEvent!.head.eventType == .parameter || nextEvent!.head.eventType == .parameterRamp {
+                handleParameter(parameterEvent: nextEvent!.parameter, timestamp: timestamp)
             }
             nextEvent = nextEvent!.head.next?.pointee
         }
@@ -156,22 +161,37 @@ class BasicAudioUnit: AudioKitAUv3 {
         }
     }
 
-    private func createParamSetters() {
+    private func initializeParameters() {
         guard let paramTree = self.parameterTree else { return }
-        paramTree.implementorValueObserver = { param, floatValue in
+        for param in paramTree.allParameters {
             let parameterAddress = ParameterAddress(rawValue: param.address)
             switch(parameterAddress) {
             case .gain:
-                guard let mainMixer = self.engine.mainMixerNode else { return }
-                mainMixer.volume = floatValue
+                self.engine.mainMixerNode?.volume = param.value
             default:
                 break;
             }
         }
-    }
-
-    private func setInitialValues() {
-        guard let mainMixer = self.engine.mainMixerNode else { return }
-        mainMixer.volume = 0.25
+        paramTree.implementorValueObserver = { [weak self] param, floatValue in
+            guard let self = self else { return }
+            let parameterAddress = ParameterAddress(rawValue: param.address)
+            switch(parameterAddress) {
+            case .gain:
+                self.engine.mainMixerNode?.volume = floatValue
+            default:
+                break;
+            }
+        }
+        paramTree.implementorValueProvider = { [weak self] param in
+            guard let self = self else { return 0.0 }
+            let parameterAddress = ParameterAddress(rawValue: param.address)
+            switch(parameterAddress) {
+            case .gain:
+                return self.engine.mainMixerNode?.volume ?? 0.0
+            default:
+                break;
+            }
+            return 0.0
+        }
     }
 }

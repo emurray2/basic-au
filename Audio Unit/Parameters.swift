@@ -13,7 +13,8 @@ let ParameterManager = ParameterTreeSpec {
             name: "Output Gain",
             units: .linearGain,
             valueRange: 0.0...1.0,
-            defaultValue: 0.5
+            defaultValue: 0.5,
+            flags: [.flag_CanRamp, .flag_IsWritable, .flag_IsReadable]
         )
     }
 }
