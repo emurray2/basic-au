@@ -12,7 +12,7 @@ extension AVAudioUnit {
                                                     componentFlagsMask: 0)
         return AVAudioUnitComponentManager.shared().components(matching: description).first
     }
-    
+
     fileprivate func loadAudioUnitViewController(completion: @escaping (UIViewController?) -> Void) {
         auAudioUnit.requestViewController { [weak self] viewController in
             DispatchQueue.main.async {

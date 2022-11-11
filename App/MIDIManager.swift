@@ -49,7 +49,7 @@ class MIDIManager: Identifiable, ObservableObject {
                 guard msg.childType == .source else {
                     break
                 }
-                
+
                 let res = MIDIPortDisconnectSource(self.port, msg.child)
                 if res != noErr {
                     print("Failed to disconnect MIDI Source: \(msg.child)")
