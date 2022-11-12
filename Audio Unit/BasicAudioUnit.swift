@@ -159,6 +159,7 @@ class BasicAudioUnit: AudioKitAUv3 {
             try engine.start()
             osc.start()
             try super.allocateRenderResources()
+            allocateRenderResourcesDSP(dsp, outputBus.format.channelCount, outputBus.format.sampleRate)
             initializeParameters()
         } catch {
             return
@@ -175,7 +176,7 @@ class BasicAudioUnit: AudioKitAUv3 {
     }
 
     private func handleParameter(parameterEvent event: AUParameterEvent, timestamp: UnsafePointer<AudioTimeStamp>) {
-        parameterTree?.parameter(withAddress: event.parameterAddress)?.value = event.value
+        setParameterValueDSP(self.dsp, event.parameterAddress, event.value)
     }
 
     private func handleMIDI(midiEvent event: AUMIDIEvent) {
@@ -222,8 +223,21 @@ class BasicAudioUnit: AudioKitAUv3 {
                                                    renderEvent,
                                                    pullInputBlock) in
             guard let self = self else { return 1 }
+
             if let eventList = renderEvent?.pointee {
                 self.handleEvents(eventsList: eventList, timestamp: timestamp)
+            }
+
+            guard let paramTree = self.parameterTree else { return 1 }
+
+            for param in paramTree.allParameters {
+                let parameterAddress = ParameterAddress(rawValue: param.address)
+                switch(parameterAddress) {
+                case .gain:
+                    self.engine.mainMixerNode?.volume = getParameterValueDSP(self.dsp, param.address)
+                default:
+                    break;
+                }
             }
 
             // Render the audio
@@ -234,6 +248,8 @@ class BasicAudioUnit: AudioKitAUv3 {
 
     private func initializeParameters() {
         guard let paramTree = self.parameterTree else { return }
+
+        // Set initial values
         for param in paramTree.allParameters {
             let parameterAddress = ParameterAddress(rawValue: param.address)
             switch(parameterAddress) {
@@ -243,26 +259,15 @@ class BasicAudioUnit: AudioKitAUv3 {
                 break;
             }
         }
+
         paramTree.implementorValueObserver = { [weak self] param, floatValue in
             guard let self = self else { return }
-            let parameterAddress = ParameterAddress(rawValue: param.address)
-            switch(parameterAddress) {
-            case .gain:
-                self.engine.mainMixerNode?.volume = floatValue
-            default:
-                break;
-            }
+            setParameterValueDSP(self.dsp, param.address, floatValue)
         }
+
         paramTree.implementorValueProvider = { [weak self] param in
             guard let self = self else { return 0.0 }
-            let parameterAddress = ParameterAddress(rawValue: param.address)
-            switch(parameterAddress) {
-            case .gain:
-                return self.engine.mainMixerNode?.volume ?? 0.0
-            default:
-                break;
-            }
-            return 0.0
+            return getParameterValueDSP(self.dsp, param.address)
         }
     }
 }
