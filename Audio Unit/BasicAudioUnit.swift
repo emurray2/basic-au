@@ -67,9 +67,58 @@ open class AudioKitAUv3: AUAudioUnit {
     }
 }
 
+fileprivate extension AUAudioUnitPreset {
+    convenience init(number: Int, name: String) {
+        self.init()
+        self.number = number
+        self.name = name
+    }
+}
+
 class BasicAudioUnit: AudioKitAUv3 {
     var engine: AudioEngine!
     var osc: MIDISampler!
+
+    public override var factoryPresets: [AUAudioUnitPreset] {
+        return [
+            AUAudioUnitPreset(number: 0, name: "Hello Preset")
+        ]
+    }
+
+    private let factoryPresetValues:[(
+        pr_gain: AUValue,
+        _
+    )] = [
+        (1.0, 0.0) // 1.0 - gain value, 0.0 - dummy value
+    ]
+
+    private var _currentPreset: AUAudioUnitPreset?
+    public override var currentPreset: AUAudioUnitPreset? {
+        get { return _currentPreset }
+        set {
+            // If the newValue is nil, return.
+            guard let preset = newValue else {
+                print("bad")
+                _currentPreset = nil
+                return
+            }
+
+            // Factory presets need to always have a number >= 0.
+            if preset.number >= 0 {
+                let values = factoryPresetValues[preset.number]
+                self.setPresetValues(
+                    pr_gain: values.pr_gain
+                )
+                _currentPreset = preset
+            }
+        }
+    }
+
+    func setPresetValues(
+        pr_gain: AUValue
+    ) {
+        self.parameterTree?.parameter(withAddress: 0)?.value = pr_gain // hardcode gain address for now
+    }
 
     public override init(componentDescription: AudioComponentDescription,
                   options: AudioComponentInstantiationOptions = []) throws {
