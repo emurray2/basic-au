@@ -1,6 +1,7 @@
 import AudioKit
 import AVFoundation
 import CoreAudioKit
+import CAudioKitEX
 
 open class AudioKitAUv3: AUAudioUnit {
     var mcb: AUHostMusicalContextBlock?
@@ -120,16 +121,28 @@ class BasicAudioUnit: AudioKitAUv3 {
         self.parameterTree?.parameter(withAddress: 0)?.value = pr_gain // hardcode gain address for now
     }
 
+    /// DSP Reference
+    public private(set) var dsp: DSPRef?
+
     public override init(componentDescription: AudioComponentDescription,
                   options: AudioComponentInstantiationOptions = []) throws {
         do {
             try super.init(componentDescription: componentDescription, options: options)
+
+            // Create pointer to C++ DSP code.
+            dsp = akCreateDSP(componentDescription.componentSubType)
+            assert(dsp != nil)
+
             try setOutputBusArrays()
         } catch let err {
             Log(err, type: .error)
             throw err
         }
         setInternalRenderingBlock()
+    }
+
+    deinit {
+        deleteDSP(dsp)
     }
 
     override public func allocateRenderResources() throws {

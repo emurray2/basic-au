@@ -26,6 +26,7 @@
 		602EFFFC28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6099E069291F401E00BDCFE5 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 6099E068291F401E00BDCFE5 /* AudioKitEX */; };
 		6099E06B291F402C00BDCFE5 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 6099E06A291F402C00BDCFE5 /* AudioKitEX */; };
+		6099E06D291F79D100BDCFE5 /* BasicAudioUnitDSP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6099E06C291F79D100BDCFE5 /* BasicAudioUnitDSP.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		602EFFD928E0A8230020A1C6 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		602EFFE028E0A8240020A1C6 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		602EFFFB28E0A8240020A1C6 /* A Basic Audio UnitExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "A Basic Audio UnitExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6099E06C291F79D100BDCFE5 /* BasicAudioUnitDSP.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BasicAudioUnitDSP.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				602E001528E0A8250020A1C6 /* Parameters.swift */,
 				602E000528E0A8250020A1C6 /* ParameterSpecBase.swift */,
 				602E000A28E0A8250020A1C6 /* String+Utils.swift */,
+				6099E06C291F79D100BDCFE5 /* BasicAudioUnitDSP.mm */,
 			);
 			path = "Audio Unit";
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 					};
 					602EFFFA28E0A8240020A1C6 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -276,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				602E001628E0A8250020A1C6 /* Parameters.swift in Sources */,
+				6099E06D291F79D100BDCFE5 /* BasicAudioUnitDSP.mm in Sources */,
 				602E000F28E0A8250020A1C6 /* BasicAudioUnit.swift in Sources */,
 				602E002628E0A8250020A1C6 /* ObservableAUParameter.swift in Sources */,
 				602E000628E0A8250020A1C6 /* ParameterSpecBase.swift in Sources */,
@@ -418,6 +423,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -441,6 +447,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,6 +459,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
