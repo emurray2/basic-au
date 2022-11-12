@@ -7,6 +7,10 @@ open class AudioKitAUv3: AUAudioUnit {
     var tsb: AUHostTransportStateBlock?
     var moeb: AUMIDIOutputEventBlock?
 
+    override public var channelCapabilities: [NSNumber]? {
+        return [0, 1, 0, 2]
+    }
+
     // Parameter tree stuff (for automation + control)
     open var _parameterTree: AUParameterTree!
     override open var parameterTree: AUParameterTree? {
@@ -80,6 +84,11 @@ class BasicAudioUnit: AudioKitAUv3 {
     }
 
     override public func allocateRenderResources() throws {
+        if outputBus.format.channelCount > 2 {
+            throw NSError(domain: NSOSStatusErrorDomain,
+                          code: Int(kAudioUnitErr_FailedInitialization),
+                          userInfo: nil)
+        }
         engine = AudioEngine()
         osc = MIDISampler()
         engine.output = osc
